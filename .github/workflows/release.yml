@@ -4,7 +4,9 @@ permissions:
   contents: write
 
 on:
-  release:
+  push:
+    tags:
+      - '**[0-9]+.[0-9]+.[0-9]+*'
 
 jobs:
   release:
