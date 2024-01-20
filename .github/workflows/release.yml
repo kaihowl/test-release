@@ -1,0 +1,21 @@
+name: Release
+
+permissions:
+  contents: write
+
+on:
+  releases:
+    types: [published]
+
+jobs:
+    runs-on: "ubuntu-20.04"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Upload release artifacts
+        uses: Roang-zero1/github-upload-release-artifacts-action@v2
+        with:
+          args: "stuff.txt"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
