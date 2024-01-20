@@ -18,6 +18,6 @@ jobs:
       - name: Upload release artifacts
         uses: Roang-zero1/github-upload-release-artifacts-action@v2
         with:
-          args: "stuff.txt"
+          args: "artifacts/*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
